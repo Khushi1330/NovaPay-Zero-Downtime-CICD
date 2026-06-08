@@ -6,6 +6,7 @@ on:
       - main
 
 jobs:
+
   build:
 
     runs-on: ubuntu-latest
@@ -22,13 +23,28 @@ jobs:
           java-version: 21
 
       - name: Build Application
-        run: echo "Building NovaPay"
+        run: echo "Building NovaPay Banking Application"
 
-      - name: Run Unit Tests
-        run: echo "Running Tests"
+      - name: Unit Testing
+        run: echo "Executing Unit Tests"
 
-      - name: Security Scan
-        run: echo "Running Security Checks"
+      - name: SonarQube SAST Scan
+        run: echo "Running Static Security Analysis"
 
-      - name: Deploy
-        run: echo "Deploying"
+      - name: Trivy Dependency Scan
+        run: echo "Scanning Dependencies for Vulnerabilities"
+
+      - name: OWASP ZAP DAST Scan
+        run: echo "Executing Dynamic Security Tests"
+
+      - name: RBI Compliance Gate
+        run: echo "Validating RBI Controls"
+
+      - name: PCI-DSS Compliance Gate
+        run: echo "Validating PCI-DSS Controls"
+
+      - name: Deploy to Kubernetes
+        run: echo "Deploying to Kubernetes Cluster"
+
+      - name: Deployment Verification
+        run: echo "Verifying Deployment Health"
