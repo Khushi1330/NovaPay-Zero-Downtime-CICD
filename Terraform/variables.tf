@@ -1,3 +1,4 @@
 variable "environment" {
-  default = "production"
+  description = "Deployment Environment"
+  default     = "production"
 }
