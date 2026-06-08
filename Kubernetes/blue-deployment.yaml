@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: novapay-blue
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: novapay
+      version: blue
+
+  template:
+    metadata:
+      labels:
+        app: novapay
+        version: blue
+
+    spec:
+      containers:
+      - name: novapay
+        image: novapay:v1

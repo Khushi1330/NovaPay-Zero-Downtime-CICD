@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: novapay-green
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: novapay
+      version: green
+
+  template:
+    metadata:
+      labels:
+        app: novapay
+        version: green
+
+    spec:
+      containers:
+      - name: novapay
+        image: novapay:v2
