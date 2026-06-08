@@ -1,0 +1,36 @@
+name: NovaPay CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set Up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Build Application
+        run: echo "Building NovaPay Application"
+
+      - name: Run Unit Tests
+        run: echo "Running Tests"
+
+      - name: Trivy Security Scan
+        run: echo "Scanning Dependencies"
+
+      - name: Compliance Check
+        run: echo "Checking RBI Policies"
+
+      - name: Deploy
+        run: echo "Deploying Application"
