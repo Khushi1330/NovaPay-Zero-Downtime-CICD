@@ -47,6 +47,7 @@ The project demonstrates how modern DevSecOps practices can be applied to financ
 ## Architecture Diagram
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/b285c7ff-7ca7-4de1-9821-f0dbd8faae6c" />
+
 ## Project Highlights
 
 - Designed a production-grade DevSecOps architecture for a digital banking platform.
