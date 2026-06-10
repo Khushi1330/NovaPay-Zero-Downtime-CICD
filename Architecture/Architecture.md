@@ -72,3 +72,20 @@ This project proposes a production-grade DevSecOps CI/CD pipeline architecture d
 The architecture follows a GitOps-driven DevSecOps model where code changes are validated through automated quality, security, and compliance gates before deployment to Kubernetes environments.
 
 All deployments are verified through monitoring and rollback mechanisms to ensure service continuity and regulatory compliance.
+
+## Expected Outcomes
+
+The proposed architecture enables NovaPay Digital Bank to transition from manual deployments to a secure, automated, and compliant DevSecOps delivery model.
+
+Expected benefits include:
+
+* Reduced deployment time
+* Improved deployment frequency
+* Reduced Mean Time To Recovery (MTTR)
+* Increased deployment reliability
+* Continuous compliance verification
+* Automated security validation
+* Zero-downtime deployments
+* Improved operational resilience
+
+The architecture aligns with RBI technology governance expectations and PCI-DSS security requirements while supporting scalable banking operations.

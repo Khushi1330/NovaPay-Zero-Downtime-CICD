@@ -1,24 +1,87 @@
 # Compliance Gates
 
-## Gate 1 - SAST
-Tool: SonarQube
-Threshold: 0 Critical Vulnerabilities
+## Gate 1: Static Application Security Testing
 
-## Gate 2 - Dependency Scan
-Tool: Trivy
-Threshold: 0 Critical CVEs
+Tool:
+SonarQube
 
-## Gate 3 - DAST
-Tool: OWASP ZAP
-Threshold: 0 High Vulnerabilities
+Pass Criteria:
 
-## Gate 4 - Policy Check
-Tool: OPA
-Threshold: 100% Pass
+* 0 Critical vulnerabilities
+* Maximum 2 High vulnerabilities
 
-## Gate 5 - License Scan
-Threshold: No GPL Licenses
+Failure Action:
+Pipeline blocked.
 
-## Gate 6 - Infrastructure Scan
-Tool: Checkov
-Threshold: Pass
+---
+
+## Gate 2: Dependency Scanning
+
+Tool:
+Trivy
+
+Pass Criteria:
+
+* 0 Critical CVEs
+
+Failure Action:
+Pipeline blocked.
+
+---
+
+## Gate 3: Dynamic Application Security Testing
+
+Tool:
+OWASP ZAP
+
+Pass Criteria:
+
+* 0 High vulnerabilities
+
+Failure Action:
+Pipeline blocked.
+
+---
+
+## Gate 4: Policy Validation
+
+Tool:
+Open Policy Agent (OPA)
+
+Pass Criteria:
+
+* All policies pass
+
+Failure Action:
+Deployment rejected.
+
+---
+
+## Gate 5: License Compliance
+
+Pass Criteria:
+
+* No GPL, AGPL, or SSPL dependencies
+
+Failure Action:
+Legal review required.
+
+---
+
+## Gate 6: Infrastructure Security
+
+Tool:
+Checkov
+
+Pass Criteria:
+
+* No critical infrastructure issues
+
+Failure Action:
+Pull request blocked.
+
+---
+
+## Compliance Objective
+
+Ensure automated enforcement of security, compliance, and governance controls before production deployment.
